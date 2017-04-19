@@ -1,0 +1,2367 @@
+{
+  "nodes": [
+    {
+      "op": "null", 
+      "name": "data", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "embed_weight", 
+      "attr": {
+        "input_dim": "120", 
+        "output_dim": "10"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "Embedding", 
+      "name": "embed", 
+      "attr": {
+        "input_dim": "120", 
+        "output_dim": "10"
+      }, 
+      "inputs": [[0, 0, 0], [1, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "slicechannel1", 
+      "attr": {
+        "axis": "1", 
+        "num_outputs": "12", 
+        "squeeze_axis": "1"
+      }, 
+      "inputs": [[2, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l0_i2h_weight", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l0_i2h_bias", 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t12_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 0, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm_l0_begin_state_2", 
+      "attr": {
+        "dtype": "float32", 
+        "shape": "(0, 200)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l0_h2h_weight", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l0_h2h_bias", 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t12_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[7, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus24", 
+      "inputs": [[6, 0, 0], [10, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t12_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[11, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t12_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[12, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t12_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[12, 1, 0]]
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm_l0_begin_state_3", 
+      "attr": {
+        "dtype": "float32", 
+        "shape": "(0, 200)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul48", 
+      "inputs": [[14, 0, 0], [15, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t12_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[12, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t12_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[12, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul49", 
+      "inputs": [[17, 0, 0], [18, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t12_state", 
+      "inputs": [[16, 0, 0], [19, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation24", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[20, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t12_out", 
+      "inputs": [[13, 0, 0], [21, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l1_i2h_weight", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l1_i2h_bias", 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t12_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[22, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm_l1_begin_state_2", 
+      "attr": {
+        "dtype": "float32", 
+        "shape": "(0, 200)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l1_h2h_weight", 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "lstm_l1_h2h_bias", 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t12_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[26, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus25", 
+      "inputs": [[25, 0, 0], [29, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t12_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[30, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t12_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[31, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t12_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[31, 1, 0]]
+    }, 
+    {
+      "op": "_zeros", 
+      "name": "lstm_l1_begin_state_3", 
+      "attr": {
+        "dtype": "float32", 
+        "shape": "(0, 200)"
+      }, 
+      "inputs": []
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul50", 
+      "inputs": [[33, 0, 0], [34, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t12_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[31, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t12_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[31, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul51", 
+      "inputs": [[36, 0, 0], [37, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t12_state", 
+      "inputs": [[35, 0, 0], [38, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation25", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[39, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t12_out", 
+      "inputs": [[32, 0, 0], [40, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims12", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[41, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t13_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 1, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t13_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[22, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus26", 
+      "inputs": [[43, 0, 0], [44, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t13_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[45, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t13_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[46, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t13_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[46, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul52", 
+      "inputs": [[48, 0, 0], [20, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t13_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[46, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t13_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[46, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul53", 
+      "inputs": [[50, 0, 0], [51, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t13_state", 
+      "inputs": [[49, 0, 0], [52, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation26", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[53, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t13_out", 
+      "inputs": [[47, 0, 0], [54, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t13_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[55, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t13_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[41, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus27", 
+      "inputs": [[56, 0, 0], [57, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t13_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[58, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t13_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[59, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t13_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[59, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul54", 
+      "inputs": [[61, 0, 0], [39, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t13_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[59, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t13_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[59, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul55", 
+      "inputs": [[63, 0, 0], [64, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t13_state", 
+      "inputs": [[62, 0, 0], [65, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation27", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[66, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t13_out", 
+      "inputs": [[60, 0, 0], [67, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims13", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[68, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t14_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 2, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t14_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[55, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus28", 
+      "inputs": [[70, 0, 0], [71, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t14_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[72, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t14_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[73, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t14_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[73, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul56", 
+      "inputs": [[75, 0, 0], [53, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t14_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[73, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t14_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[73, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul57", 
+      "inputs": [[77, 0, 0], [78, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t14_state", 
+      "inputs": [[76, 0, 0], [79, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation28", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[80, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t14_out", 
+      "inputs": [[74, 0, 0], [81, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t14_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[82, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t14_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[68, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus29", 
+      "inputs": [[83, 0, 0], [84, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t14_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[85, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t14_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[86, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t14_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[86, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul58", 
+      "inputs": [[88, 0, 0], [66, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t14_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[86, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t14_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[86, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul59", 
+      "inputs": [[90, 0, 0], [91, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t14_state", 
+      "inputs": [[89, 0, 0], [92, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation29", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[93, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t14_out", 
+      "inputs": [[87, 0, 0], [94, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims14", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[95, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t15_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 3, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t15_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[82, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus30", 
+      "inputs": [[97, 0, 0], [98, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t15_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[99, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t15_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[100, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t15_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[100, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul60", 
+      "inputs": [[102, 0, 0], [80, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t15_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[100, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t15_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[100, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul61", 
+      "inputs": [[104, 0, 0], [105, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t15_state", 
+      "inputs": [[103, 0, 0], [106, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation30", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[107, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t15_out", 
+      "inputs": [[101, 0, 0], [108, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t15_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[109, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t15_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[95, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus31", 
+      "inputs": [[110, 0, 0], [111, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t15_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[112, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t15_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[113, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t15_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[113, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul62", 
+      "inputs": [[115, 0, 0], [93, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t15_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[113, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t15_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[113, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul63", 
+      "inputs": [[117, 0, 0], [118, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t15_state", 
+      "inputs": [[116, 0, 0], [119, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation31", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[120, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t15_out", 
+      "inputs": [[114, 0, 0], [121, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims15", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[122, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t16_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 4, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t16_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[109, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus32", 
+      "inputs": [[124, 0, 0], [125, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t16_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[126, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t16_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[127, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t16_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[127, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul64", 
+      "inputs": [[129, 0, 0], [107, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t16_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[127, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t16_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[127, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul65", 
+      "inputs": [[131, 0, 0], [132, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t16_state", 
+      "inputs": [[130, 0, 0], [133, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation32", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[134, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t16_out", 
+      "inputs": [[128, 0, 0], [135, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t16_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[136, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t16_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[122, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus33", 
+      "inputs": [[137, 0, 0], [138, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t16_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[139, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t16_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[140, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t16_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[140, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul66", 
+      "inputs": [[142, 0, 0], [120, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t16_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[140, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t16_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[140, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul67", 
+      "inputs": [[144, 0, 0], [145, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t16_state", 
+      "inputs": [[143, 0, 0], [146, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation33", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[147, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t16_out", 
+      "inputs": [[141, 0, 0], [148, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims16", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[149, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t17_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 5, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t17_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[136, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus34", 
+      "inputs": [[151, 0, 0], [152, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t17_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[153, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t17_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[154, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t17_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[154, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul68", 
+      "inputs": [[156, 0, 0], [134, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t17_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[154, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t17_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[154, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul69", 
+      "inputs": [[158, 0, 0], [159, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t17_state", 
+      "inputs": [[157, 0, 0], [160, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation34", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[161, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t17_out", 
+      "inputs": [[155, 0, 0], [162, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t17_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[163, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t17_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[149, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus35", 
+      "inputs": [[164, 0, 0], [165, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t17_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[166, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t17_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[167, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t17_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[167, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul70", 
+      "inputs": [[169, 0, 0], [147, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t17_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[167, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t17_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[167, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul71", 
+      "inputs": [[171, 0, 0], [172, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t17_state", 
+      "inputs": [[170, 0, 0], [173, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation35", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[174, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t17_out", 
+      "inputs": [[168, 0, 0], [175, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims17", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[176, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t18_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 6, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t18_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[163, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus36", 
+      "inputs": [[178, 0, 0], [179, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t18_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[180, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t18_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[181, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t18_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[181, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul72", 
+      "inputs": [[183, 0, 0], [161, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t18_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[181, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t18_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[181, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul73", 
+      "inputs": [[185, 0, 0], [186, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t18_state", 
+      "inputs": [[184, 0, 0], [187, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation36", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[188, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t18_out", 
+      "inputs": [[182, 0, 0], [189, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t18_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[190, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t18_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[176, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus37", 
+      "inputs": [[191, 0, 0], [192, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t18_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[193, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t18_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[194, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t18_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[194, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul74", 
+      "inputs": [[196, 0, 0], [174, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t18_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[194, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t18_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[194, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul75", 
+      "inputs": [[198, 0, 0], [199, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t18_state", 
+      "inputs": [[197, 0, 0], [200, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation37", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[201, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t18_out", 
+      "inputs": [[195, 0, 0], [202, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims18", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[203, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t19_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 7, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t19_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[190, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus38", 
+      "inputs": [[205, 0, 0], [206, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t19_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[207, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t19_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[208, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t19_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[208, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul76", 
+      "inputs": [[210, 0, 0], [188, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t19_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[208, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t19_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[208, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul77", 
+      "inputs": [[212, 0, 0], [213, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t19_state", 
+      "inputs": [[211, 0, 0], [214, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation38", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[215, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t19_out", 
+      "inputs": [[209, 0, 0], [216, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t19_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[217, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t19_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[203, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus39", 
+      "inputs": [[218, 0, 0], [219, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t19_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[220, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t19_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[221, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t19_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[221, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul78", 
+      "inputs": [[223, 0, 0], [201, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t19_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[221, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t19_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[221, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul79", 
+      "inputs": [[225, 0, 0], [226, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t19_state", 
+      "inputs": [[224, 0, 0], [227, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation39", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[228, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t19_out", 
+      "inputs": [[222, 0, 0], [229, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims19", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[230, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t20_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 8, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t20_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[217, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus40", 
+      "inputs": [[232, 0, 0], [233, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t20_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[234, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t20_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[235, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t20_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[235, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul80", 
+      "inputs": [[237, 0, 0], [215, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t20_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[235, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t20_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[235, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul81", 
+      "inputs": [[239, 0, 0], [240, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t20_state", 
+      "inputs": [[238, 0, 0], [241, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation40", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[242, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t20_out", 
+      "inputs": [[236, 0, 0], [243, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t20_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[244, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t20_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[230, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus41", 
+      "inputs": [[245, 0, 0], [246, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t20_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[247, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t20_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[248, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t20_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[248, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul82", 
+      "inputs": [[250, 0, 0], [228, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t20_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[248, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t20_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[248, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul83", 
+      "inputs": [[252, 0, 0], [253, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t20_state", 
+      "inputs": [[251, 0, 0], [254, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation41", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[255, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t20_out", 
+      "inputs": [[249, 0, 0], [256, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims20", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[257, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t21_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 9, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t21_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[244, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus42", 
+      "inputs": [[259, 0, 0], [260, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t21_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[261, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t21_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[262, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t21_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[262, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul84", 
+      "inputs": [[264, 0, 0], [242, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t21_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[262, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t21_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[262, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul85", 
+      "inputs": [[266, 0, 0], [267, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t21_state", 
+      "inputs": [[265, 0, 0], [268, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation42", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[269, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t21_out", 
+      "inputs": [[263, 0, 0], [270, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t21_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[271, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t21_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[257, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus43", 
+      "inputs": [[272, 0, 0], [273, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t21_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[274, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t21_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[275, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t21_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[275, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul86", 
+      "inputs": [[277, 0, 0], [255, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t21_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[275, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t21_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[275, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul87", 
+      "inputs": [[279, 0, 0], [280, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t21_state", 
+      "inputs": [[278, 0, 0], [281, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation43", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[282, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t21_out", 
+      "inputs": [[276, 0, 0], [283, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims21", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[284, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t22_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 10, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t22_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[271, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus44", 
+      "inputs": [[286, 0, 0], [287, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t22_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[288, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t22_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[289, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t22_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[289, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul88", 
+      "inputs": [[291, 0, 0], [269, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t22_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[289, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t22_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[289, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul89", 
+      "inputs": [[293, 0, 0], [294, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t22_state", 
+      "inputs": [[292, 0, 0], [295, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation44", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[296, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t22_out", 
+      "inputs": [[290, 0, 0], [297, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t22_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[298, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t22_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[284, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus45", 
+      "inputs": [[299, 0, 0], [300, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t22_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[301, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t22_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[302, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t22_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[302, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul90", 
+      "inputs": [[304, 0, 0], [282, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t22_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[302, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t22_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[302, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul91", 
+      "inputs": [[306, 0, 0], [307, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t22_state", 
+      "inputs": [[305, 0, 0], [308, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation45", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[309, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t22_out", 
+      "inputs": [[303, 0, 0], [310, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims22", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[311, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t23_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[3, 11, 0], [4, 0, 0], [5, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l0_t23_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[298, 0, 0], [8, 0, 0], [9, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus46", 
+      "inputs": [[313, 0, 0], [314, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l0_t23_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[315, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t23_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[316, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t23_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[316, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul92", 
+      "inputs": [[318, 0, 0], [296, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t23_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[316, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l0_t23_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[316, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul93", 
+      "inputs": [[320, 0, 0], [321, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l0_t23_state", 
+      "inputs": [[319, 0, 0], [322, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation46", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[323, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l0_t23_out", 
+      "inputs": [[317, 0, 0], [324, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t23_i2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[325, 0, 0], [23, 0, 0], [24, 0, 0]]
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "lstm_l1_t23_h2h", 
+      "attr": {"num_hidden": "800"}, 
+      "inputs": [[311, 0, 0], [27, 0, 0], [28, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "_plus47", 
+      "inputs": [[326, 0, 0], [327, 0, 0]]
+    }, 
+    {
+      "op": "SliceChannel", 
+      "name": "lstm_l1_t23_slice", 
+      "attr": {"num_outputs": "4"}, 
+      "inputs": [[328, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t23_o", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[329, 3, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t23_f", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[329, 1, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul94", 
+      "inputs": [[331, 0, 0], [309, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t23_i", 
+      "attr": {"act_type": "sigmoid"}, 
+      "inputs": [[329, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "lstm_l1_t23_c", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[329, 2, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "_mul95", 
+      "inputs": [[333, 0, 0], [334, 0, 0]]
+    }, 
+    {
+      "op": "elemwise_add", 
+      "name": "lstm_l1_t23_state", 
+      "inputs": [[332, 0, 0], [335, 0, 0]]
+    }, 
+    {
+      "op": "Activation", 
+      "name": "activation47", 
+      "attr": {"act_type": "tanh"}, 
+      "inputs": [[336, 0, 0]]
+    }, 
+    {
+      "op": "_mul", 
+      "name": "lstm_l1_t23_out", 
+      "inputs": [[330, 0, 0], [337, 0, 0]]
+    }, 
+    {
+      "op": "expand_dims", 
+      "name": "expand_dims23", 
+      "attr": {"axis": "1"}, 
+      "inputs": [[338, 0, 0]]
+    }, 
+    {
+      "op": "Concat", 
+      "name": "concat1", 
+      "attr": {
+        "dim": "1", 
+        "num_args": "12"
+      }, 
+      "inputs": [
+        [42, 0, 0], 
+        [69, 0, 0], 
+        [96, 0, 0], 
+        [123, 0, 0], 
+        [150, 0, 0], 
+        [177, 0, 0], 
+        [204, 0, 0], 
+        [231, 0, 0], 
+        [258, 0, 0], 
+        [285, 0, 0], 
+        [312, 0, 0], 
+        [339, 0, 0]
+      ]
+    }, 
+    {
+      "op": "Reshape", 
+      "name": "reshape2", 
+      "attr": {"shape": "(-1, 200)"}, 
+      "inputs": [[340, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "pred_weight", 
+      "attr": {"num_hidden": "200"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "null", 
+      "name": "pred_bias", 
+      "attr": {"num_hidden": "200"}, 
+      "inputs": []
+    }, 
+    {
+      "op": "FullyConnected", 
+      "name": "pred", 
+      "attr": {"num_hidden": "200"}, 
+      "inputs": [[341, 0, 0], [342, 0, 0], [343, 0, 0]]
+    }, 
+    {
+      "op": "null", 
+      "name": "softmax_label", 
+      "inputs": []
+    }, 
+    {
+      "op": "Reshape", 
+      "name": "reshape3", 
+      "attr": {"shape": "(-1,)"}, 
+      "inputs": [[345, 0, 0]]
+    }, 
+    {
+      "op": "SoftmaxOutput", 
+      "name": "softmax", 
+      "inputs": [[344, 0, 0], [346, 0, 0]]
+    }
+  ], 
+  "arg_nodes": [
+    0, 
+    1, 
+    4, 
+    5, 
+    8, 
+    9, 
+    23, 
+    24, 
+    27, 
+    28, 
+    342, 
+    343, 
+    345
+  ], 
+  "node_row_ptr": [
+    0, 
+    1, 
+    2, 
+    3, 
+    15, 
+    16, 
+    17, 
+    18, 
+    19, 
+    20, 
+    21, 
+    22, 
+    23, 
+    27, 
+    28, 
+    29, 
+    30, 
+    31, 
+    32, 
+    33, 
+    34, 
+    35, 
+    36, 
+    37, 
+    38, 
+    39, 
+    40, 
+    41, 
+    42, 
+    43, 
+    44, 
+    45, 
+    49, 
+    50, 
+    51, 
+    52, 
+    53, 
+    54, 
+    55, 
+    56, 
+    57, 
+    58, 
+    59, 
+    60, 
+    61, 
+    62, 
+    63, 
+    67, 
+    68, 
+    69, 
+    70, 
+    71, 
+    72, 
+    73, 
+    74, 
+    75, 
+    76, 
+    77, 
+    78, 
+    79, 
+    83, 
+    84, 
+    85, 
+    86, 
+    87, 
+    88, 
+    89, 
+    90, 
+    91, 
+    92, 
+    93, 
+    94, 
+    95, 
+    96, 
+    100, 
+    101, 
+    102, 
+    103, 
+    104, 
+    105, 
+    106, 
+    107, 
+    108, 
+    109, 
+    110, 
+    111, 
+    112, 
+    116, 
+    117, 
+    118, 
+    119, 
+    120, 
+    121, 
+    122, 
+    123, 
+    124, 
+    125, 
+    126, 
+    127, 
+    128, 
+    129, 
+    133, 
+    134, 
+    135, 
+    136, 
+    137, 
+    138, 
+    139, 
+    140, 
+    141, 
+    142, 
+    143, 
+    144, 
+    145, 
+    149, 
+    150, 
+    151, 
+    152, 
+    153, 
+    154, 
+    155, 
+    156, 
+    157, 
+    158, 
+    159, 
+    160, 
+    161, 
+    162, 
+    166, 
+    167, 
+    168, 
+    169, 
+    170, 
+    171, 
+    172, 
+    173, 
+    174, 
+    175, 
+    176, 
+    177, 
+    178, 
+    182, 
+    183, 
+    184, 
+    185, 
+    186, 
+    187, 
+    188, 
+    189, 
+    190, 
+    191, 
+    192, 
+    193, 
+    194, 
+    195, 
+    199, 
+    200, 
+    201, 
+    202, 
+    203, 
+    204, 
+    205, 
+    206, 
+    207, 
+    208, 
+    209, 
+    210, 
+    211, 
+    215, 
+    216, 
+    217, 
+    218, 
+    219, 
+    220, 
+    221, 
+    222, 
+    223, 
+    224, 
+    225, 
+    226, 
+    227, 
+    228, 
+    232, 
+    233, 
+    234, 
+    235, 
+    236, 
+    237, 
+    238, 
+    239, 
+    240, 
+    241, 
+    242, 
+    243, 
+    244, 
+    248, 
+    249, 
+    250, 
+    251, 
+    252, 
+    253, 
+    254, 
+    255, 
+    256, 
+    257, 
+    258, 
+    259, 
+    260, 
+    261, 
+    265, 
+    266, 
+    267, 
+    268, 
+    269, 
+    270, 
+    271, 
+    272, 
+    273, 
+    274, 
+    275, 
+    276, 
+    277, 
+    281, 
+    282, 
+    283, 
+    284, 
+    285, 
+    286, 
+    287, 
+    288, 
+    289, 
+    290, 
+    291, 
+    292, 
+    293, 
+    294, 
+    298, 
+    299, 
+    300, 
+    301, 
+    302, 
+    303, 
+    304, 
+    305, 
+    306, 
+    307, 
+    308, 
+    309, 
+    310, 
+    314, 
+    315, 
+    316, 
+    317, 
+    318, 
+    319, 
+    320, 
+    321, 
+    322, 
+    323, 
+    324, 
+    325, 
+    326, 
+    327, 
+    331, 
+    332, 
+    333, 
+    334, 
+    335, 
+    336, 
+    337, 
+    338, 
+    339, 
+    340, 
+    341, 
+    342, 
+    343, 
+    347, 
+    348, 
+    349, 
+    350, 
+    351, 
+    352, 
+    353, 
+    354, 
+    355, 
+    356, 
+    357, 
+    358, 
+    359, 
+    360, 
+    364, 
+    365, 
+    366, 
+    367, 
+    368, 
+    369, 
+    370, 
+    371, 
+    372, 
+    373, 
+    374, 
+    375, 
+    376, 
+    380, 
+    381, 
+    382, 
+    383, 
+    384, 
+    385, 
+    386, 
+    387, 
+    388, 
+    389, 
+    390, 
+    391, 
+    392, 
+    393, 
+    397, 
+    398, 
+    399, 
+    400, 
+    401, 
+    402, 
+    403, 
+    404, 
+    405, 
+    406, 
+    407, 
+    408, 
+    409, 
+    413, 
+    414, 
+    415, 
+    416, 
+    417, 
+    418, 
+    419, 
+    420, 
+    421, 
+    422, 
+    423, 
+    424, 
+    425, 
+    426, 
+    427, 
+    428, 
+    429, 
+    430, 
+    431
+  ], 
+  "heads": [[347, 0, 0]], 
+  "attrs": {"mxnet_version": ["int", 904]}
+}
