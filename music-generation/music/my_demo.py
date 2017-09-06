@@ -1,6 +1,7 @@
 import numpy as np
 import mxnet as mx
-import argparse,read_music
+import argparse
+import read_music
 
 parser = argparse.ArgumentParser(description="Train RNN on Penn Tree Bank",
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -58,8 +59,8 @@ if __name__ == '__main__':
     # val_sent, _ = tokenize_text("./data/ptb.test.txt", vocab=vocab, start_label=start_label,
     #                             invalid_label=invalid_label)
 
-    train_sent = read_music.read_measure("601598.mid")
-    val_sent = read_music.read_measure("601598.mid")
+    train_sent = read_music.read_measure("Minuet-in-G-Minor.mid")
+    val_sent = read_music.read_measure("Minuet-in-G-Minor.mid")
 
     #data_train = mx.io.NDArrayIter(train_sent)
     data_train = mx.rnn.BucketSentenceIter(train_sent, args.batch_size,
@@ -142,3 +143,8 @@ if __name__ == '__main__':
     out = model.get_outputs()
     print(out[0].asnumpy())
     print(out[0].asnumpy().shape)
+
+    data_test = mx.io.NDArrayIter(data_val)
+    pre = model.predict(data_test)
+    print(pre)
+    print("end")
